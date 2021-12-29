@@ -119,6 +119,9 @@ augroup mydelimitmate
 	au FileType python let b:delimitMate_nesting_quotes = ['"',"'"]
 augroup END
 
+" [vim-startify]
+let g:startify_custom_header=startify#pad(split(system('figlet -w 100 Welcome Knave!'), '\n'))
+
 " ---------- Keymap Changes ---------- "
 let mapleader = ","
 " [vim-nerdtree-tabs]
