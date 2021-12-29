@@ -123,11 +123,13 @@ augroup END
 let g:startify_custom_header=startify#pad(split(system('figlet -w 100 Welcome Knave!'), '\n'))
 
 " ---------- Keymap Changes ---------- "
-let mapleader = ","
+let mapleader = " "
 " [vim-nerdtree-tabs]
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " [tagbar]
 nmap <silent> <leader>b :TagbarToggle<CR>
+" [ctrlp]
+nnoremap <silent> <leader>s :CtrlP<CR>
 " close current buffer but keep split
 nmap <leader>d :b#<bar>bd#<CR>
 " switch to next buffer but keep split
