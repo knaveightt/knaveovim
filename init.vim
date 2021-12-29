@@ -11,13 +11,14 @@
 " Loosley based on https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84
 "
 " Dependencies:
-" A) Universal Ctags (ctags) [vim-easytags]
+" A) git
+" B) Universal Ctags (ctags) [vim-easytags]
 "
 " Installation Procedure:
 " 0) Install neovim
-" 1) Install Vundle.vim via 
-"    git clone https://github.com/VundleVim/Vundle.vim
-"    ~/.config/nvim/bundle/Vundle.vim
+" 1) Install vim-plug to .local/share autoload directory via
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 " 2) Decide on colorscheme if needed (I opt to colorize my terminal)
 "    Check if this influences vim-airline theme settings
 " 3) Patch your terminal font for powerline, nerdfont icons, devicons, etc
@@ -26,50 +27,46 @@
 "    - Run fc-cache
 "    - Change terminal font to patched font
 "    - Ensure vim-airline settings has powerline fonts enabled
-" 4) Run :PluginInstall
+" 4) Run :PlugInstall
 " Good to go!
 " _____________________________________________________________________________
 " Start of Customizations
 set nocompatible
 
-" ---------- Vundle and Plugin Installation ---------- "
+" ---------- Plugin Installation ---------- "
 filetype off
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle/Vundle.vim')
-
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.config/nvim/plugged')
 
 " Visual Goodies
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
 
 " Ease of Use
-Plugin 'ctrlpvim/ctrlp.vim' " Control + P fuzzy find
-Plugin 'Raimondi/delimitMate' " match delimiters
+Plug 'ctrlpvim/ctrlp.vim' " Control + P fuzzy find
+Plug 'Raimondi/delimitMate' " match delimiters
 
 " Git Version Control
-Plugin 'airblade/vim-gitgutter' " gutter symbols
-Plugin 'tpope/vim-fugitive' " git commands
+Plug 'airblade/vim-gitgutter' " gutter symbols
+Plug 'tpope/vim-fugitive' " git commands
                           " git add                  --> :Gwrite
                           " git commit               --> :Git commit
                           " git push                 --> :Gpush
                           " git checkout <file name> --> :Gread
 
 " Programming Interface
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'xolox/vim-misc' " dependency for vim-easytags
-Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/a.vim' " :AT opens associated header/source file
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-syntastic/syntastic'
+Plug 'xolox/vim-misc' " dependency for vim-easytags
+Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/a.vim' " :AT opens associated header/source file
 
 " Final Nerd Font Support
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " ---------- Basic Settings and Defaults ---------- "
 set encoding=utf-8
