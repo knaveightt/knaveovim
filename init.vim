@@ -33,7 +33,7 @@
 " Good to go!
 "
 " Additional Installs:
-" :CocInstall coc-json
+" :CocInstall coc-json coc-yaml
 " _____________________________________________________________________________
 " Start of Customizations
 set nocompatible
