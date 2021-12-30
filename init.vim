@@ -13,6 +13,8 @@
 " Dependencies:
 " A) git
 " B) Universal Ctags (ctags) [vim-easytags]
+" C) Nodejs (nodejs) [coc.nvim]
+" D) yarn (yarn) [coc.nvim]
 "
 " Installation Procedure:
 " 0) Install neovim
@@ -29,6 +31,9 @@
 "    - Ensure vim-airline settings has powerline fonts enabled
 " 4) Run :PlugInstall
 " Good to go!
+"
+" Additional Installs:
+" :CocInstall coc-json
 " _____________________________________________________________________________
 " Start of Customizations
 set nocompatible
@@ -62,6 +67,7 @@ Plug 'xolox/vim-misc' " dependency for vim-easytags
 Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/a.vim' " :AT opens associated header/source file
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Final Nerd Font Support
 Plug 'ryanoasis/vim-devicons'
