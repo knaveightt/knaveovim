@@ -48,6 +48,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 
 " Ease of Use
+Plug 'folke/which-key.nvim'
 Plug 'ctrlpvim/ctrlp.vim' " Control + P fuzzy find
 Plug 'Raimondi/delimitMate' " match delimiters
 
@@ -78,7 +79,7 @@ call plug#end()
 set encoding=utf-8
 set backspace=indent,eol,start " allows backspace under many circumstances
 set ruler
-set number
+set number relativenumber
 set showcmd
 set incsearch
 set hlsearch
@@ -127,6 +128,15 @@ augroup END
 
 " [vim-startify]
 let g:startify_custom_header=startify#pad(split(system('figlet -w 100 Welcome Knave!'), '\n'))
+
+" [which-key.nvim]
+lua << EOF
+  require("which-key").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
 
 " ---------- Keymap Changes ---------- "
 let mapleader = " "
