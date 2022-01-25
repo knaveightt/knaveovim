@@ -49,7 +49,8 @@ Plug 'mhinz/vim-startify'
 
 " Ease of Use
 Plug 'folke/which-key.nvim'
-Plug 'ctrlpvim/ctrlp.vim' " Control + P fuzzy find
+Plug 'nvim-lua/plenary.nvim' " dependency for telescope
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'Raimondi/delimitMate' " match delimiters
 
 " Git Version Control
@@ -144,8 +145,9 @@ let mapleader = " "
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " [tagbar]
 nmap <silent> <leader>b :TagbarToggle<CR>
-" [ctrlp]
-nnoremap <silent> <leader>s :CtrlP<CR>
+" [Telescope Keymaps]
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 " close current buffer but keep split
 nmap <leader>d :b#<bar>bd#<CR>
 " switch to next buffer but keep split
